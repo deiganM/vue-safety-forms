@@ -152,7 +152,7 @@ export default {
 <style>
   .wrapper {
     display: grid;
-    grid-template-columns: .5fr .5fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-columns: .5fr .5fr 1fr 1fr 1fr 1fr 1fr;
     grid-auto-rows: minmax(5rem, auto);
 		border: solid black 2px;
 		grid-gap: 2px;
@@ -175,8 +175,6 @@ export default {
     grid-column: 1/3;
     grid-row: 1/3;
   }
-
- /* likelihood TEXTBOXES */
 
   .likelihood {
     background: rgb(243, 237, 171);

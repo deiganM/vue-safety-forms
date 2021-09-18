@@ -10,20 +10,14 @@
   </div>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style scoped>
 main {
   display: grid;
-  /* align-items: center; */
   align-content: center;
   height: 90vh;
   width: 100vw;
 }
+
 .title {
   justify-self: center;
   margin: 1rem 1.5rem;
