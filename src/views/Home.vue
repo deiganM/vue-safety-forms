@@ -1,155 +1,37 @@
 <template>
-  <div>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-
-    <div class="burger">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
-    </div>
+  <div class="container">
+    <main>
+      <h1 class="title">
+        Industry Safety Forms (Under Construction)</h1>
+      <h3 class="description">
+        This is a small selection of real world inspired safety forms. These forms were created to be used on tablets by workers in the field.
+      </h3>
+    </main>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
 export default {
-  name: 'Home',
-  components: {
-  }
+
 }
 </script>
 
 <style scoped>
-body {
-  background: #ed473f;
-  color: #002241;
+main {
+  display: grid;
+  /* align-items: center; */
+  align-content: center;
+  height: 90vh;
+  width: 100vw;
+}
+.title {
+  justify-self: center;
+  margin: 1rem 1.5rem;
 }
 
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - 
-HEADER
-- - - - - - - - - - - - - - - - - - - - - - - - */
-header {
-  height: 80px;
-  /* background: #333; */
-}
-
-header nav .wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-}
-
-
-header ul {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  width: 400px;
-  justify-content: space-between;
-}
-
-header li {
-  list-style: none;
-  margin: 0;
-}
-
-header a {
-  color: #002241;
-  text-decoration: none;
-}
-
-.burger {
-  display: none;
-}
-
-.burger div {
-  width: 25px;
-  height: 3px;
-  background: white;
-  margin-bottom: 9px;
-  margin-right: 2rem;
-}
-
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - 
-MAIN CONTENT
-- - - - - - - - - - - - - - - - - - - - - - - - */
-.main-content {
-  padding: 80px 0;
-}
-
-.main-content p {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - 
-FOOTER
-- - - - - - - - - - - - - - - - - - - - - - - - */
-
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - 
-MEDIA QUERIES
-- - - - - - - - - - - - - - - - - - - - - - - - */
-
-@media screen and (max-width:545px) {
-
-
-  .nav-links {
-      position: absolute;
-      left: 100%;
-      height: 100vh;
-      top: 0;
-      background: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      width: 50%;
-      transition: transform 0.3s;
-      padding-top: 25px;
-      padding-left: 5px;
-  }
-
-  .nav-links li {
-      padding: .5rem;
-      opacity: 1;
-  }
-
-  .nav-links a {
-    color: white;
-  }
-
-  .burger {
-      display: block;
-      cursor: pointer;
-      z-index: 1;
-  }
-
-  .nav-active {
-      transform: translateX(-100%);
-  }
-
-  .close .line1 {
-      transform: rotate(-45deg) translate(-8px,6px);
-      margin-bottom: 17px;
-  }
-
-  .close .line2 {
-      display: none;
-  }
-
-  .close .line3 {
-      transform: rotate(45deg) translate(-8px,-6px);
-      margin-bottom: 0;
-  }
+.description {
+  justify-self: center;
+  margin: .5rem 2rem;
+  max-width: 75vw;
 }
 </style>
