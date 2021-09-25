@@ -40,6 +40,7 @@
       <div class="box numbers">
         16
       </div>
+      <!-- test box -->
       <div class="box yellow">
         16
       </div>
@@ -136,16 +137,31 @@
       <div class="box yellow">
         8
       </div>
-      <div class="box yellow">
-        16
+      <!-- test div -->
+      <div @click="emitYellowEvent" class="box yellow">
+        16 test
       </div>
     </div>
+    <!-- <button @click="emitCustomEvent">Emit Event</button> -->
   </div>
 </template>
 
 <script>
 export default {
-  Name: 'RiskMatrixTable'
+  Name: 'RiskMatrixTable',
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+    // emitCustomEvent() {
+    //   this.$emit('custom-event-name', { message: 'My custom message' })
+    // },
+    emitYellowEvent() {
+      this.$emit('yellow-event', { yellow: true })
+    },
+  }
 }
 </script>
 
@@ -210,6 +226,7 @@ export default {
     background: darkslategrey;
     color: whitesmoke;
     font-weight: bold;
+
   }
 
 	.risk-level {
@@ -220,20 +237,24 @@ export default {
 
   .green {
     background: #62d187;
+    cursor: pointer;
   }
 
 	.yellow {
 		background: #fdff00;
-		color: black
+		color: black;
+    cursor: pointer;
 	}
 
 	.orange {
 		background: #ffa500;
 		color: black;
+    cursor: pointer;
 	}
 
 	.red {
 		background: rgb(235, 13, 13);
     color: white;
+    cursor: pointer;
 	}
 </style>
