@@ -41,19 +41,19 @@
         16
       </div>
       <!-- test box -->
-      <div class="box yellow">
+      <div @click="emitYellowEvent" class="box yellow">
         16
       </div>
-      <div class="box orange">
+      <div @click="emitOrangeEvent" class="box orange">
         32
       </div>
-      <div class="box red">
+      <div @click="emitRedEvent" class="box red">
         64
       </div>
-      <div class="box red">
+      <div @click="emitRedEvent" class="box red">
         128
       </div>
-      <div class="box red">
+      <div @click="emitRedEvent" class="box red">
         256
       </div>
       <div class="box risk-level">
@@ -62,19 +62,19 @@
       <div class="box numbers">
         8
       </div>
-      <div class="box yellow">
+      <div @click="emitYellowEvent" class="box yellow">
         8
       </div>
-      <div class="box yellow">
+      <div @click="emitYellowEvent" class="box yellow">
         16
       </div>
-      <div class="box orange">
+      <div @click="emitOrangeEvent" class="box orange">
         32
       </div>
-      <div class="box red">
+      <div @click="emitRedEvent" class="box red">
         64
       </div>
-      <div class="box red">
+      <div @click="emitRedEvent" class="box red">
         128
       </div>
       <div class="box risk-level">
@@ -83,19 +83,19 @@
       <div class="box numbers">
         4
       </div>
-      <div class="box green">
+      <div @click="emitGreenEvent" class="box green">
         4
       </div>
-      <div class="box yellow">
+      <div @click="emitYellowEvent" class="box yellow">
         8
       </div>
-      <div class="box yellow">
+      <div @click="emitYellowEvent" class="box yellow">
         16
       </div>
-      <div class="box orange">
+      <div @click="emitOrangeEvent" class="box orange">
         32
       </div>
-      <div class="box red">
+      <div @click="emitRedEvent" class="box red">
         64
       </div>
       <div class="box risk-level">
@@ -104,19 +104,19 @@
       <div class="box numbers">
         2
       </div>
-      <div class="box green">
+      <div @click="emitGreenEvent" class="box green">
         2
       </div>
-      <div class="box green">
+      <div @click="emitGreenEvent" class="box green">
         4
       </div>
-      <div class="box yellow">
+      <div @click="emitYellowEvent" class="box yellow">
         8
       </div>
-      <div class="box yellow">
+      <div @click="emitYellowEvent" class="box yellow">
         16
       </div>
-      <div class="box orange">
+      <div @click="emitOrangeEvent" class="box orange">
         32
       </div>
       <div class="box risk-level">
@@ -125,21 +125,20 @@
       <div class="box numbers">
         1
       </div>
-      <div class="box green">
+      <div @click="emitGreenEvent" class="box green">
         1
       </div>
-      <div class="box green">
+      <div @click="emitGreenEvent" class="box green">
         2
       </div>
-      <div class="box green">
+      <div @click="emitGreenEvent" class="box green">
         4
       </div>
-      <div class="box yellow">
+      <div @click="emitYellowEvent" class="box yellow">
         8
       </div>
-      <!-- test div -->
       <div @click="emitYellowEvent" class="box yellow">
-        16 test
+        16
       </div>
     </div>
     <!-- <button @click="emitCustomEvent">Emit Event</button> -->
@@ -160,6 +159,15 @@ export default {
     // },
     emitYellowEvent() {
       this.$emit('yellow-event', { yellow: true })
+    },
+    emitGreenEvent() {
+      this.$emit('green-event', { green: true })
+    },
+    emitOrangeEvent() {
+      this.$emit('orange-event', { orange: true })
+    },
+    emitRedEvent() {
+      this.$emit('red-event', { red: true })
     },
   }
 }
@@ -237,24 +245,26 @@ export default {
 
   .green {
     background: #62d187;
+    font-size: 20px;
     cursor: pointer;
   }
 
 	.yellow {
 		background: #fdff00;
-		color: black;
+    font-size: 20px;
     cursor: pointer;
 	}
 
 	.orange {
 		background: #ffa500;
-		color: black;
+    font-size: 20px;
     cursor: pointer;
 	}
 
 	.red {
 		background: rgb(235, 13, 13);
     color: white;
+    font-size: 20px;
     cursor: pointer;
 	}
 </style>
