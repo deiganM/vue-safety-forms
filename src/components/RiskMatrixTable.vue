@@ -264,7 +264,6 @@ export default {
 	.red {
 		background: rgb(235, 13, 13);
     color: white;
-    font-size: 20px;
     cursor: pointer;
 	}
 </style>

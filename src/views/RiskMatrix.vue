@@ -15,7 +15,6 @@
         </div>
       </div>
       <div v-if="riskMatrix">
-        <!-- <risk-matrix-table @custom-event-name="setMessage" /> -->
         <risk-matrix-table 
           @yellow-event="yellowStatus" 
           @green-event="greenStatus" 
@@ -23,29 +22,45 @@
           @red-event="redStatus"
         />
       </div>
-      <div v-if="green" class="warning-containers">
-        <div class="green-container">
-          <p class="warning-text">GREEN STATUS: Level 1 access is required</p>
+      <div v-if="riskMatrix">
+        <div v-if="green" class="warning-containers">
+          <div class="green-container">
+            <p class="warning-text">GREEN STATUS: Level 1 access is required</p>
+          </div>
+          <button @click="clearButton" class="clear-button">Clear Risk Matrix</button>
+          <!-- 888888888888888888888888888888888888888 -->
+          <sign-off-box :approver="approver[0]" />
+          <!-- <sign-off-box /> -->
+          <!-- <sign-off-box :btn-text="text[3]" /> -->
+          <!-- 888888888888888888888888888888888888888 -->
         </div>
-        <button @click="clearButton" class="clear-button">Clear Risk Matrix</button>
-      </div>
-      <div v-if="yellow" class="warning-containers">
-        <div class="yellow-container">
-          <p class="warning-text">YELLOW STATUS: Level 2 access is required</p>
+        <div v-if="yellow" class="warning-containers">
+          <div class="yellow-container">
+            <p class="warning-text">YELLOW STATUS: Level 2 access is required</p>
+          </div>
+          <button @click="clearButton" class="clear-button">Clear Risk Matrix</button>
+            <sign-off-box />
+            <sign-off-box />
         </div>
-        <button @click="clearButton" class="clear-button">Clear Risk Matrix</button>
-      </div>
-      <div v-if="orange" class="warning-containers">
-        <div class="orange-container">
-          <p class="warning-text">ORANGE STATUS: Level 3 access is required</p>
+        <div v-if="orange" class="warning-containers">
+          <div class="orange-container">
+            <p class="warning-text">ORANGE STATUS: Level 3 access is required</p>
+          </div>
+          <button @click="clearButton" class="clear-button">Clear Risk Matrix</button>
+          <sign-off-box />
+          <sign-off-box />
+          <sign-off-box />
         </div>
-        <button @click="clearButton" class="clear-button">Clear Risk Matrix</button>
-      </div>
-      <div v-if="red" class="warning-containers">
-        <div class="red-container">
-          <p class="red-warning-text">RED STATUS: Level 4 access is required</p>
+        <div v-if="red" class="warning-containers">
+          <div class="red-container">
+            <p class="red-warning-text">RED STATUS: Level 4 access is required</p>
+          </div>
+          <button @click="clearButton" class="clear-button">Clear Risk Matrix</button>
+          <sign-off-box />
+          <sign-off-box />
+          <sign-off-box />
+          <sign-off-box />
         </div>
-        <button @click="clearButton" class="clear-button">Clear Risk Matrix</button>
       </div>
     </div>
   </div>
@@ -55,14 +70,17 @@
 
 // @ is an alias to /src
 import RiskMatrixTable from '../components/RiskMatrixTable.vue'
+import SignOffBox from '../components/SignOffBox.vue'
 
 export default {
   Name: 'RiskMatrix',
   components: {
-    RiskMatrixTable
+    RiskMatrixTable,
+    SignOffBox
   },
   data() {
     return {
+      approver: ['Teammate working on task','Shift Supervisor', 'Foreperson', 'Project Manager',],
       riskMatrix: false,
       green: false,
       yellow: false,
@@ -75,7 +93,8 @@ export default {
       this.riskMatrix = true
     },
     hideRiskMatrix() {
-      this.riskMatrix = false
+      this.riskMatrix = false,
+      this.clearButton()
     },
     yellowStatus(payload) {
       this.yellow = payload.yellow
@@ -106,7 +125,7 @@ export default {
       this.green = false
       this.orange = false
       this.red = false
-    }
+    },
   }
 }
 </script>
