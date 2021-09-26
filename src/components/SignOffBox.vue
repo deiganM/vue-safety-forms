@@ -51,11 +51,7 @@ export default {
   width: 80vw;
   border: solid darkslategrey 3px;
   border-radius: 3px;
-  /* height: 20vh; */
   margin: 0 auto;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 .approver-name {
