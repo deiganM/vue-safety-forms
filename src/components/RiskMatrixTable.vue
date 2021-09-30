@@ -40,7 +40,6 @@
       <div class="box numbers">
         16
       </div>
-      <!-- test box -->
       <div @click="emitYellowEvent" class="box yellow">
         16
       </div>
@@ -141,22 +140,13 @@
         16
       </div>
     </div>
-    <!-- <button @click="emitCustomEvent">Emit Event</button> -->
   </div>
 </template>
 
 <script>
 export default {
   Name: 'RiskMatrixTable',
-  data() {
-    return {
-
-    }
-  },
   methods: {
-    // emitCustomEvent() {
-    //   this.$emit('custom-event-name', { message: 'My custom message' })
-    // },
     emitYellowEvent() {
       this.$emit('yellow-event', { yellow: true })
     },
@@ -174,96 +164,95 @@ export default {
 </script>
 
 <style>
-  .wrapper {
-    display: grid;
-    grid-template-columns: .5fr .5fr 1fr 1fr 1fr 1fr 1fr;
-    grid-auto-rows: minmax(5rem, auto);
-		border: solid black 2px;
-		grid-gap: 2px;
-		background: black;
-    border-radius: 2px;
-    margin: 1rem;
-  }
-	
-  .box {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    padding: .5rem;
-  }
+.wrapper {
+  display: grid;
+  grid-template-columns: .5fr .5fr 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-rows: minmax(5rem, auto);
+  border: solid black 2px;
+  grid-gap: 2px;
+  background: black;
+  border-radius: 2px;
+  margin: 1rem;
+}
 
-  .impact-score {
-    background: #d6d6d6;
-    color: black;
-    font-weight: bold;
-    grid-column: 1/3;
-    grid-row: 1/3;
-  }
+.box {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  padding: .5rem;
+}
 
-  .likelihood {
-    background: rgb(243, 237, 171);
-    font-weight: bold;
-  }
+.impact-score {
+  background: #d6d6d6;
+  color: black;
+  font-weight: bold;
+  grid-column: 1/3;
+  grid-row: 1/3;
+}
 
-  .very-unlikely {
-    grid-column: 3/4;
-    grid-row: 1;
-  }
+.likelihood {
+  background: rgb(243, 237, 171);
+  font-weight: bold;
+}
 
-  .unlikely {
-    grid-column: 4/5;
-    grid-row: 1;
-  }
+.very-unlikely {
+  grid-column: 3/4;
+  grid-row: 1;
+}
 
-  .possible {
-    grid-column: 5/6;
-    grid-row: 1;
-  }
+.unlikely {
+  grid-column: 4/5;
+  grid-row: 1;
+}
 
-  .likely {
-    grid-column: 6/7;
-    grid-row: 1;
-  }
+.possible {
+  grid-column: 5/6;
+  grid-row: 1;
+}
 
-  .highly-likely {
-    grid-column: 7/8;
-    grid-row: 1;
-  }
+.likely {
+  grid-column: 6/7;
+  grid-row: 1;
+}
 
-  .numbers {
-    background: darkslategrey;
-    color: whitesmoke;
-    font-weight: bold;
+.highly-likely {
+  grid-column: 7/8;
+  grid-row: 1;
+}
 
-  }
+.numbers {
+  background: darkslategrey;
+  color: whitesmoke;
+  font-weight: bold;
+}
 
-	.risk-level {
-		background: #d6d6d6;
-    color: black;
-    font-weight: bold;
-	}
+.risk-level {
+  background: #d6d6d6;
+  color: black;
+  font-weight: bold;
+}
 
-  .green {
-    background: #62d187;
-    font-size: 20px;
-    cursor: pointer;
-  }
+.green {
+  background: #62d187;
+  font-size: 20px;
+  cursor: pointer;
+}
 
-	.yellow {
-		background: #fdff00;
-    font-size: 20px;
-    cursor: pointer;
-	}
+.yellow {
+  background: #fdff00;
+  font-size: 20px;
+  cursor: pointer;
+}
 
-	.orange {
-		background: #ffa500;
-    font-size: 20px;
-    cursor: pointer;
-	}
+.orange {
+  background: #ffa500;
+  font-size: 20px;
+  cursor: pointer;
+}
 
-	.red {
-		background: rgb(235, 13, 13);
-    color: white;
-    cursor: pointer;
-	}
+.red {
+  background: rgb(235, 13, 13);
+  color: white;
+  cursor: pointer;
+}
 </style>

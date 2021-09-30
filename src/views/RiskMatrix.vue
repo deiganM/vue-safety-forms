@@ -27,26 +27,22 @@
           <div class="green-container">
             <p class="warning-text">GREEN STATUS: Level 1 access is required</p>
           </div>
-          <button @click="clearButton" class="clear-button">Clear Risk Matrix</button>
-          <!-- 888888888888888888888888888888888888888 -->
+          <md-button @click="clearButton" class="md-raised md-primary clear-button">Clear risk matrix</md-button>
           <sign-off-box :approver="approver[0]" />
-          <!-- <sign-off-box /> -->
-          <!-- <sign-off-box :btn-text="text[3]" /> -->
-          <!-- 888888888888888888888888888888888888888 -->
         </div>
         <div v-if="yellow" class="warning-containers">
           <div class="yellow-container">
             <p class="warning-text">YELLOW STATUS: Level 2 access is required</p>
           </div>
-          <button @click="clearButton" class="clear-button">Clear Risk Matrix</button>
-            <sign-off-box :approver="approver[0]" />
-            <sign-off-box :approver="approver[1]" />
+          <md-button @click="clearButton" class="md-raised md-primary clear-button">Clear risk matrix</md-button>
+          <sign-off-box :approver="approver[0]" />
+          <sign-off-box :approver="approver[1]" />
         </div>
         <div v-if="orange" class="warning-containers">
           <div class="orange-container">
             <p class="warning-text">ORANGE STATUS: Level 3 access is required</p>
           </div>
-          <button @click="clearButton" class="clear-button">Clear Risk Matrix</button>
+          <md-button @click="clearButton" class="md-raised md-primary clear-button">Clear risk matrix</md-button>
           <sign-off-box  :approver="approver[0]"/>
           <sign-off-box  :approver="approver[1]"/>
           <sign-off-box  :approver="approver[2]"/>
@@ -55,7 +51,7 @@
           <div class="red-container">
             <p class="red-warning-text">RED STATUS: Level 4 access is required</p>
           </div>
-          <button @click="clearButton" class="clear-button">Clear Risk Matrix</button>
+          <md-button @click="clearButton" class="md-raised md-primary clear-button">Clear risk matrix</md-button>
           <sign-off-box  :approver="approver[0]"/>
           <sign-off-box  :approver="approver[1]"/>
           <sign-off-box  :approver="approver[2]"/>
@@ -68,7 +64,6 @@
 
 <script>
 
-// @ is an alias to /src
 import RiskMatrixTable from '../components/RiskMatrixTable.vue'
 import SignOffBox from '../components/SignOffBox.vue'
 
@@ -159,7 +154,7 @@ export default {
 
   .green-container {
     background: #0ef06c;
-    border: solid darkslategrey 3px;
+    border: solid darkslategrey 1px;
     border-radius: 3px;
     height: 20vh;
     width: 80vw;
@@ -171,7 +166,7 @@ export default {
 
   .yellow-container {
     background: #ecf00e;
-    border: solid darkslategrey 3px;
+    border: solid darkslategrey 1px;
     border-radius: 3px;
     height: 20vh;
     width: 80vw;
@@ -183,7 +178,7 @@ export default {
 
   .orange-container {
     background: #f5d107;
-    border: solid darkslategrey 3px;
+    border: solid darkslategrey 1px;
     border-radius: 3px;
     height: 20vh;
     width: 80vw;
@@ -195,7 +190,7 @@ export default {
 
   .red-container {
     background: #eb0d0d;
-    border: solid darkslategrey 3px;
+    border: solid darkslategrey 1px;
     border-radius: 3px;
     height: 20vh;
     width: 80vw;
@@ -208,14 +203,12 @@ export default {
   .warning-text {
     font-size: 20px ;
     font-weight: 800;
-    letter-spacing: 1px;
   }
 
   .red-warning-text {
     font-size: 20px ;
     font-weight: 800;
     color: white;
-    letter-spacing: 1px;
   }
 
   .clear-button {

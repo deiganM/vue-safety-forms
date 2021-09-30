@@ -5,11 +5,11 @@
       <div>
         <div class="form-section">
           <div class="name-comp">
-            <md-field class="sign-off-input">
+            <md-field>
               <label>Name</label>
               <md-input></md-input>
             </md-field>
-            <md-field class="sign-off-input">
+            <md-field>
               <label>Company Division</label>
               <md-input></md-input>
             </md-field>
@@ -17,14 +17,21 @@
         </div>
         <div class="form-section">
           <div class="name-comp">
-            <md-field class="sign-off-input">
-              <label>Name</label>
-              <md-input></md-input>
-            </md-field>
-            <md-field class="sign-off-input">
-              <label>Company Division</label>
-              <md-input></md-input>
-            </md-field>
+            <md-datepicker v-model="selectedDate">
+              <label>Select date</label>
+            </md-datepicker>
+
+            <div>
+              <md-field>
+                <label for="field-area">Field Area</label>
+                <md-select name="field-area" id="fieldArea">
+                  <md-option value="southern-alberta">Southern Alberta</md-option>
+                  <md-option value="east-kootenay">East Kootenay</md-option>
+                  <md-option value="west-kootenay">West Kootenay</md-option>
+                </md-select>
+              </md-field>
+            </div>
+
           </div>
         </div>
       </div>
@@ -37,7 +44,7 @@ export default {
   name: 'SignOffCard',
   data() {
     return {
-
+      selectedDate: null
     }
   },
   props: {
@@ -47,21 +54,16 @@ export default {
       default: () => 'On shift Supervisor'
     }
   },
-  // computed: {
-  //   fullText() {
-  //     return this.approver + 'Full Text'
-  //   }
-  // }
 }
 </script>
 
 <style scoped>
 .sign-off-box {
-  background: #71c2e2;
+  background: #70f77794;
   font-size: 20px;
   width: 80vw;
-  border: solid darkslategrey 3px;
-  border-radius: 3px;
+  border: solid darkslategrey 1px;
+  border-radius: 1px;
   margin: 3rem auto;
 }
 
@@ -76,9 +78,5 @@ export default {
 
 .name-comp {
   display: flex;
-}
-
-.sign-off-input{
-  margin: 1rem 3rem;
 }
 </style>
