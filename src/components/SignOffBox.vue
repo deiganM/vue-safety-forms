@@ -4,22 +4,28 @@
       <p>Approval required from: <span class="approver-name">{{ approver }}</span></p>
       <div>
         <div class="form-section">
-          <div>
-            <label for="approver-name">Name</label>
-            <input type="text" name="approver-name">
+          <div class="name-comp">
+            <md-field class="sign-off-input">
+              <label>Name</label>
+              <md-input></md-input>
+            </md-field>
+            <md-field class="sign-off-input">
+              <label>Company Division</label>
+              <md-input></md-input>
+            </md-field>
           </div>
-            <label for="company-division">Company Division</label>
-            <input type="text" name="company-division">
         </div>
         <div class="form-section">
-          <label for="approval-date">Date</label>
-          <input type="text" name="approval-date">
-          <label for="approval-select">Approved</label>
-          <select name="approval-select">
-            <option value="">--Please choose an option--</option>
-            <option value="no">No</option>
-            <option value="yes">Yes</option>
-          </select>
+          <div class="name-comp">
+            <md-field class="sign-off-input">
+              <label>Name</label>
+              <md-input></md-input>
+            </md-field>
+            <md-field class="sign-off-input">
+              <label>Company Division</label>
+              <md-input></md-input>
+            </md-field>
+          </div>
         </div>
       </div>
     </div>
@@ -29,6 +35,11 @@
 <script>
 export default {
   name: 'SignOffCard',
+  data() {
+    return {
+
+    }
+  },
   props: {
     approver: {
       type: String,
@@ -51,7 +62,7 @@ export default {
   width: 80vw;
   border: solid darkslategrey 3px;
   border-radius: 3px;
-  margin: 0 auto;
+  margin: 3rem auto;
 }
 
 .approver-name {
@@ -59,8 +70,15 @@ export default {
 }
 
 .form-section {
-  border: solid lime 1px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+}
+
+.name-comp {
+  display: flex;
+}
+
+.sign-off-input{
+  margin: 1rem 3rem;
 }
 </style>

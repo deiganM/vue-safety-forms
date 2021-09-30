@@ -10,7 +10,8 @@
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap'); */
+
 
 body {
   margin: 0;
@@ -23,6 +24,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background:rgba(127, 255, 212, 0.336);
 }
 
 #nav {

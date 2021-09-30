@@ -39,27 +39,27 @@
             <p class="warning-text">YELLOW STATUS: Level 2 access is required</p>
           </div>
           <button @click="clearButton" class="clear-button">Clear Risk Matrix</button>
-            <sign-off-box />
-            <sign-off-box />
+            <sign-off-box :approver="approver[0]" />
+            <sign-off-box :approver="approver[1]" />
         </div>
         <div v-if="orange" class="warning-containers">
           <div class="orange-container">
             <p class="warning-text">ORANGE STATUS: Level 3 access is required</p>
           </div>
           <button @click="clearButton" class="clear-button">Clear Risk Matrix</button>
-          <sign-off-box />
-          <sign-off-box />
-          <sign-off-box />
+          <sign-off-box  :approver="approver[0]"/>
+          <sign-off-box  :approver="approver[1]"/>
+          <sign-off-box  :approver="approver[2]"/>
         </div>
         <div v-if="red" class="warning-containers">
           <div class="red-container">
             <p class="red-warning-text">RED STATUS: Level 4 access is required</p>
           </div>
           <button @click="clearButton" class="clear-button">Clear Risk Matrix</button>
-          <sign-off-box />
-          <sign-off-box />
-          <sign-off-box />
-          <sign-off-box />
+          <sign-off-box  :approver="approver[0]"/>
+          <sign-off-box  :approver="approver[1]"/>
+          <sign-off-box  :approver="approver[2]"/>
+          <sign-off-box  :approver="approver[3]"/>
         </div>
       </div>
     </div>
